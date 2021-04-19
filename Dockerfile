@@ -17,3 +17,16 @@ ENTRYPOINT ["java","-Djava.security.egd=file:/dev/./urandom","-jar","/app.jar"]
 # run command
 # 1. docker build -t springbootdocker .
 # 2. docker run -d -p 8080:8080 springbootdocker
+
+# MySQL
+# docker pull mysql:8.0.23
+# docker run -p 3306:3306 --name mysql -e MYSQL_ROOT_PASSWORD=123456 -d mysql:8.0.23
+# docker exec -it mysql bash
+# mysql -uroot -p123456
+
+#GRANT ALL PRIVILEGES ON *.* TO 'root'@'%';
+# FLUSH PRIVILEGES;
+
+# create user 'lan'@'%' identified by 'lan';
+# ALTER USER 'lan'@'%' IDENTIFIED WITH mysql_native_password BY 'Pa$$word1@';
+# FLUSH PRIVILEGES;
