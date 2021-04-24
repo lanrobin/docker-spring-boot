@@ -2,7 +2,7 @@
 # VERSION 0.0.1
 # Author: eangulee
 # 基础镜像使用java
-FROM openjdk:11
+FROM openjdk:11.0.11-jre
 # 作者
 MAINTAINER Robin <rorbbin@163.com>
 # VOLUME 指定了临时文件目录为/tmp。
@@ -21,6 +21,7 @@ ENTRYPOINT ["java","-Djava.security.egd=file:/dev/./urandom","-jar","/app.jar"]
 # MySQL
 # docker pull mysql:8.0.23
 # docker run -p 3306:3306 --name mysql -e MYSQL_ROOT_PASSWORD=123456 -d mysql:8.0.23
+# docker restart mysql
 # docker exec -it mysql bash
 # mysql -uroot -p123456
 

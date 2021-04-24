@@ -1,60 +1,25 @@
 package com.example.demo.pojo;
 
-import java.util.Date;
+import com.example.demo.pojo.rbac.RBACUser;
 
 public class User {
-    private long id;
-    private String address;
-    private Date birthday;
-    private  String name;
-    private String password;
-    private  String salt;
 
-    public long getId() {
-        return id;
+    private String email;
+    private RBACUser rabc;
+
+    public String getEmail() {
+        return email;
     }
 
-    public void setId(long id) {
-        this.id = id;
+    public void setEmail(String email) {
+        this.email = email;
     }
 
-    public String getAddress() {
-        return address;
+    public RBACUser getRabc() {
+        return rabc;
     }
 
-    public void setAddress(String address) {
-        this.address = address;
-    }
-
-    public Date getBirthday() {
-        return birthday;
-    }
-
-    public void setBirthday(Date birthday) {
-        this.birthday = birthday;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public String getPassword() {
-        return password;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
-    }
-
-    public String getSalt() {
-        return salt;
-    }
-
-    public void setSalt(String salt) {
-        this.salt = salt;
+    public void setRabc(RBACUser rabc) {
+        this.rabc = rabc;
     }
 }
