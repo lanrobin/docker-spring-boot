@@ -2,12 +2,12 @@ USE springtest;
 
 /*Data for the table `permission` */
 
-insert  into `permission`(`id`,`permission_name`,`permission_code`) values (1,'用户查看','USER_VIEW'),(2,'用户添加','USER_ADD');
+insert  into `permission`(`id`,`permission_name`,`permission_code`) values (1,'ViewUser','USER_VIEW'),(2,'ModifyUser','USER_ADD');
 
 
 /*Data for the table `role` */
 
-insert  into `role`(`id`,`role_name`) values (1,'超级管理员');
+insert  into `role`(`id`,`role_name`) values (1,'Admin');
 
 
 /*Data for the table `role_permission` */

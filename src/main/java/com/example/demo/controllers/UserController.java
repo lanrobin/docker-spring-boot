@@ -15,12 +15,16 @@ public class UserController {
     @RequestMapping(method = RequestMethod.GET)
     @ResponseBody
     public User getUserByName(String name) {
-        return userService.getUserByName(name);
+        return loadUserByName(name);
     }
 
     @RequestMapping(value="/{name}", method = RequestMethod.GET)
     @ResponseBody
     public User getUserByNameInPath(@PathVariable  String name) {
+        return loadUserByName(name);
+    }
+
+    private User loadUserByName(String name) {
         return userService.getUserByName(name);
     }
 }

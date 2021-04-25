@@ -42,6 +42,9 @@ public class RBACRepository extends BaseRepository implements IRBACRepository {
 
     @Override
     public List<RBACPermission> getUserPermissions(long userId) {
-        return null;
+
+        var sql = "SELECT id, permission_name, permission_code FROM user_permission_view WHERE user_id =:user_id";
+        var param = new MapSqlParameterSource().addValue("user_id", userId);
+        return namedParameterJdbcTemplate.query(sql, param, BeanPropertyRowMapper.newInstance(RBACPermission.class));
     }
 }
