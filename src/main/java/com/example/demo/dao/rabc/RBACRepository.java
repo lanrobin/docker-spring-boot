@@ -1,6 +1,7 @@
 package com.example.demo.dao.rabc;
 
 import com.example.demo.dao.BaseRepository;
+import com.example.demo.pojo.rbac.RBACPermission;
 import com.example.demo.pojo.rbac.RBACUser;
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.namedparam.BeanPropertySqlParameterSource;
@@ -10,9 +11,10 @@ import org.springframework.jdbc.core.namedparam.SqlParameterSourceUtils;
 import org.springframework.stereotype.Repository;
 
 import java.util.Collection;
+import java.util.List;
 
 @Repository
-public class RBACUserRepository extends BaseRepository implements IRBACUserRepository {
+public class RBACRepository extends BaseRepository implements IRBACRepository {
 
     private static String INSERT_SQL = "INSERT INTO rbac_user(username, password, locked) VALUES(:username, :password, :locked)";
 
@@ -36,5 +38,10 @@ public class RBACUserRepository extends BaseRepository implements IRBACUserRepos
         var sql = "SELECT id, username, password, locked FROM rbac_user WHERE username = :username";
         var param = new MapSqlParameterSource().addValue("username", name);
         return namedParameterJdbcTemplate.queryForObject(sql, param, BeanPropertyRowMapper.newInstance(RBACUser.class));
+    }
+
+    @Override
+    public List<RBACPermission> getUserPermissions(long userId) {
+        return null;
     }
 }

@@ -17,3 +17,9 @@
 # create user 'lan'@'%' identified by 'lan';
 # ALTER USER 'lan'@'%' IDENTIFIED WITH mysql_native_password BY 'Pa$$word1@';
 # FLUSH PRIVILEGES;
+
+
+# REDIS
+# docker pull redis:6.2.2
+# docker run --name redis -p 6379:6379 --restart=always -v $PWD/data:/data  -d redis:6.2.2 redis-server --appendonly yes daemonize yes --requirepass "123456"
+# docker run -d --name myredis -p 6379:6379 redis --requirepass "123456"

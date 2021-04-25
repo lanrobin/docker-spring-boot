@@ -1,6 +1,6 @@
 package com.example.demo.service.rbac;
 
-import com.example.demo.dao.rabc.IRBACUserRepository;
+import com.example.demo.dao.rabc.IRBACRepository;
 import com.example.demo.pojo.rbac.RBACUser;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -9,7 +9,7 @@ import org.springframework.stereotype.Service;
 public class RBACUserService implements IRBACUserService{
 
     @Autowired
-    private IRBACUserRepository rbacUserRepository;
+    private IRBACRepository rbacUserRepository;
 
     @Override
     public RBACUser getUserByName(String name) {
